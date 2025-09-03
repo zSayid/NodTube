@@ -1,0 +1,1 @@
+export const logo = "https://www.freeiconspng.com/img/1823";

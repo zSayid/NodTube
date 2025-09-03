@@ -1,0 +1,11 @@
+export { default as App } from "../components/app/App";
+export { default as Main } from "../components/main/Main";
+export {default as Navbar} from "../components/navbar/Navbar";
+export { default as SearchBar } from "../components/search-bar/SearchBar";
+export {default as Category } from "../components/category/Category";
+export { default as Videos } from "./videos/Videos";
+export {default as VideoCard} from "./video-card/VideoCard";
+export {default as ChannelCard} from "./channel-card/ChannelCard";
+export { default as Search } from "./search/search";
+export {default as Loader} from "./loader/Loader";
+export {default as VideoDetail} from "./video-detail/VideoDetail";
