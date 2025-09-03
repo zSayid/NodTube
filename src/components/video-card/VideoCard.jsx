@@ -91,7 +91,7 @@ const VideoCard = ({ video }) => {
           sx={{ marginTop: "auto" }}
         >
           <Avatar src={video?.thumbnail} sx={{ width: 28, height: 28 }} />
-          <Link to={video?.author?.url} style={{textDecoration: 'none', color: 'inherit'}}>
+          <Link to={`/video/${video?.videoId}`} style={{textDecoration: 'none', color: 'inherit'}}>
           <Typography variant="subtitle2" color="gray">
             {video?.avatar?.name}
           </Typography>

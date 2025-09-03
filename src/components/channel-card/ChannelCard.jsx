@@ -1,5 +1,12 @@
-import { CheckCircle } from "@mui/icons-material";
-import { Box, CardContent, CardMedia, Typography, Avatar } from "@mui/material";
+import {
+  Box,
+  CardContent,
+  CardMedia,
+  Typography,
+  Avatar,
+  Stack,
+} from "@mui/material";
+import { Link } from "react-router-dom";
 
 const ChannelCard = ({ video }) => {
   console.log(video);
@@ -29,14 +36,26 @@ const ChannelCard = ({ video }) => {
             mt: "20px",
           }}
         />
-        <Typography variant={"h6"}>
-          <CheckCircle sx={{ fontSize: "14px", color: "gray", ml: "5px" }} />
-        </Typography>
-
-        <Avatar src={video?.thumbnail} sx={{ width: 28, height: 28 }} />
-        <Typography variant="subtitle2" color="gray">
-          {video?.avatar?.name}
-        </Typography>
+        <Stack direction="row" py={1} px={2}>
+          <Link
+            to={video?.avatar?.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ textDecoration: "none" }}
+          >
+            <Stack
+              direction={"row"}
+              gap={"5px"}
+              marginTop={"5px"}
+              alignItems="center"
+            >
+              <Avatar src={video?.image} />
+              <Box>
+                <Typography fontWeight="bold">{video?.avatar?.name}</Typography>
+              </Box>
+            </Stack>
+          </Link>
+        </Stack>
       </CardContent>
     </Box>
   );

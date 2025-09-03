@@ -8,6 +8,7 @@ import LikeDislikeButtons from "../button-components/LikeDislikeButtons";
 import ShareButton from "../button-components/ShareButton";
 import Loader from "../loader/Loader";
 import SuggestionVideos from "../suggestion-videos/SuggestionVideos";
+import { CheckCircle } from "@mui/icons-material";
 
 const VideoDetail = () => {
   const { id } = useParams();
@@ -77,30 +78,20 @@ const VideoDetail = () => {
                 mt: 2,
               }}
             >
-              <Stack direction="row" py={1} px={2}>
-                <Link 
-                  to={videoDetail?.author?.url} 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  style={{ textDecoration: "none" }}
-                >
-                  <Stack
-                    direction={"row"}
-                    gap={"5px"}
-                    marginTop={"5px"}
-                    alignItems="center"
-                  >
-                    <Avatar
-                      src={videoDetail?.image}
-                    />
-                    <Box>
-                      <Typography fontWeight="bold">
-                        {videoDetail?.avatar?.name}
-                      </Typography>
-                    </Box>
-                  </Stack>
-                </Link>
-              </Stack>
+        <Stack
+          direction="row"
+          alignItems="center"
+          spacing={1}
+          sx={{ marginTop: "auto" }}
+        >
+          <Avatar src={videoDetail?.thumbnail} sx={{ width: 28, height: 28 }} />
+          <Link to={videoDetail?.avatar?.url} style={{textDecoration: 'none', color: 'inherit'}}>
+          <Typography variant="subtitle2" color="gray">
+            {videoDetail?.avatar?.name}
+          </Typography>
+          </Link>
+          <CheckCircle sx={{ fontSize: 16, color: "gray" }} />
+        </Stack>
               <Box
                 sx={{
                   display: "flex",
