@@ -19,7 +19,7 @@ const VideoDetail = () => {
     const fetchVideoDetails = async () => {
       try {
         const response = await fetch(
-          `http://localhost:5000/api/search?q=${id}&type=video`
+          `https://nodtube-1.onrender.com/api/search?q=${id}&type=video`
         );
 
         const data = await response.json();
@@ -39,7 +39,6 @@ const VideoDetail = () => {
             author: item.author.name,
           }
        ))
-        console.log("Video Details from youtube api:", mappedData);
         setVideoDetail(mappedData[0]);
       } catch (error) {
         console.error("Error fetching video details:", error);

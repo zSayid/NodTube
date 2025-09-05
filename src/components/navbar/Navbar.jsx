@@ -16,7 +16,7 @@ const Navbar = () => {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          `http://localhost:5000/api/search?q=All&type=video&maxResults=50`
+          `https://nodtube-1.onrender.com/api/search?q=All&type=video&maxResults=50`
         );
 
         if (!response.ok) {

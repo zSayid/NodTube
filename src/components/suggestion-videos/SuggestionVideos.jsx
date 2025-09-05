@@ -9,7 +9,7 @@ const SuggestionVideos = () => {
     useEffect(() => {
         const fetchSuggestionVideos = async () => {
           try {
-            const response = await fetch(`http://localhost:5000/api/search?q=All&type=video&maxResults=50`)
+            const response = await fetch(`https://nodtube-1.onrender.com/api/search?q=All&type=video&maxResults=50`)
             const data = await response.json()
             setSuggestionVideos(data)
           } catch (error) {

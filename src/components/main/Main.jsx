@@ -94,32 +94,35 @@ const Main = () => {
 
       try {
         const response = await fetch(
-          `http://localhost:5000/api/search?q=${selectedCategory}&type=video&maxResults=50`
+          `https://nodtube-1.onrender.com/api/search?q=${selectedCategory}&type=video&maxResults=50`
         );
+        // const response = await fetch(
+        //   process.env.REACT_APP_API_URL +
+        //     `search?q=${selectedCategory}&type=video&maxResults=50`
+        // );
 
+
+        console.log(response);
         if (!response.ok) {
           throw new Error("Network response was not ok");
         }
 
         const data = await response.json();
-        console.log('raw data', data);
 
-       const mappedData = data.map(item => (
-          {
-            videoId: item.videoId,
-            title: item.title,
-            description: item.description,
-            thumbnail: item.thumbnail,
-            publishedTime: item.ago,
-            image: item.image,
-            views: item.views,
-            avatar: item.author,
-            channelId: item.author.url,
-            likeCount: Math.floor(Math.random() * 1000000), // Simulating like count
-            channelTitle: item.author.name,
-            author: item.author.name,
-          }
-       ))
+        const mappedData = data.map((item) => ({
+          videoId: item.videoId,
+          title: item.title,
+          description: item.description,
+          thumbnail: item.thumbnail,
+          publishedTime: item.ago,
+          image: item.image,
+          views: item.views,
+          avatar: item.author,
+          channelId: item.author.url,
+          likeCount: Math.floor(Math.random() * 1000000),
+          channelTitle: item.author.name,
+          author: item.author.name,
+        }));
         setVideos(mappedData);
         setCacheValue(cacheKey, mappedData);
       } catch (error) {

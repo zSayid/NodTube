@@ -9,7 +9,6 @@ import {
 import { Link } from "react-router-dom";
 
 const ChannelCard = ({ video }) => {
-  console.log(video);
   return (
     <Box
       sx={{
