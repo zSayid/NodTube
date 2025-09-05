@@ -67,7 +67,7 @@ const Navbar = () => {
           <img
             src={logo}
             alt="logo"
-            height={75}
+            height={90}
             style={{ paddingLeft: "1px", marginTop: "5px" }}
           />
         </Link>

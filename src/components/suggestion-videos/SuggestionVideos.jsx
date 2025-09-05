@@ -1,4 +1,4 @@
-import { Box, Stack, Container, Typography, } from '@mui/material'
+import { Box, Stack, Container} from '@mui/material'
 import React, { useEffect, useState } from 'react'
 import VideoCard from '../video-card/VideoCard'; // Adjust the path as needed
 
@@ -23,9 +23,6 @@ const SuggestionVideos = () => {
     <Stack>
       <Box p={2} sx={{ height: "95vh", overflowY: "auto" }}>
         <Container maxWidth={"90%"}>
-          <Typography variant="h5" fontWeight={"bold"}>
-            Suggestion Videos
-          </Typography>
           {/* Here you can map through suggestionVideos and render them */}
           {suggestionVideos.map((video) => (
             <VideoCard key={video.id} video={video} />
