@@ -67,8 +67,7 @@
 // export default Main;
 
 import { useEffect, useState } from "react";
-import { Stack, Box, Container, Typography } from "@mui/material";
-import { colors } from "../../constantants/colors";
+import { Stack, Box, Container } from "@mui/material";
 import { Category, Videos } from "../";
 // import { ApiService } from "../../service/api.service";
 import { useCache } from "../../context/CacheContext";
@@ -145,10 +144,10 @@ const Main = () => {
         }}
       >
         <Container maxWidth={"90%"}>
-          <Typography variant="h5" fontWeight={"bold"}>
+          {/* <Typography variant="h5" fontWeight={"bold"}>
             {selectedCategory}{" "}
             <span style={{ color: colors.secondary }}>Videos</span>
-          </Typography>
+          </Typography> */}
           <Videos videos={videos} />
         </Container>
       </Box>

@@ -131,7 +131,7 @@ const VideoDetail = () => {
                   {typeof videoDetail?.views === "number" ? videoDetail?.views.toLocaleString() : "N/A"} views
                 </Typography>
                 <Typography variant="caption" color="text.secondary">
-                  {videoDetail?.ago}
+                  {videoDetail?.publishedTime}
                 </Typography>
               </Box>
               <Box>
