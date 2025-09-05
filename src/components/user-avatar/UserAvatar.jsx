@@ -55,9 +55,9 @@ const UserAvatar = () => {
         <MenuItem>
           <Avatar src="/avatar.png" />
           <Typography ml={1}>
-            Nodir Kosimkhujayev
+            User
             <Typography variant="body2" color="gray">
-              nodirkosimkhujayev@gmail.com
+              user@example.com
             </Typography>
           </Typography>
         </MenuItem>
